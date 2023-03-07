@@ -1,6 +1,8 @@
 import NewTopicForm from "../../components/NewTopicForm";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
+import React, { Component }  from 'react';
+
 
 export default function Topics() {
   const topics = {}; // replace this with a call to your selector to select all the topics in state
