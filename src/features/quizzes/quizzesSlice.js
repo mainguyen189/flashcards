@@ -19,6 +19,15 @@ export const quizzesSlice = createSlice({
     }
 })
 
+//thunk dispatches quiz id then add quiz id to topic id
+export const addQuizThunk = (payload) => {
+    return (dispatch) => {
+        dispatch(addQuiz(payload));
+        dispatch(addQuizId({topicId: payload.topicId, id: payload.id}))
+    }
+};
+
+//selector
 export const selectQuizzes = state => state.quizzes.quizzes;
 export const { addQuiz } = quizzesSlice.actions;
 export default quizzesSlice.reducer;
